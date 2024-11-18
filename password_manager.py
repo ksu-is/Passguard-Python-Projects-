@@ -1,10 +1,11 @@
 from cryptography.fernet import Fernet
-
+import getpass
 '''
 def write_key():
     key = Fernet.generate_key()
     with open("key.key", "wb") as key_file:
         key_file.write(key)'''
+        
 
 
 def load_key():
@@ -17,6 +18,20 @@ def load_key():
 key = load_key()
 fer = Fernet(key)
 
+MASTER_PASSWORD = "ksuis"
+
+def authenticate():
+    """Authenticate the user with the master password."""
+    try:
+        # Use getpass to hide input
+        master_pwd = getpass.getpass("Enter master password: ")
+    except Exception as e:
+        print("Error with secure input. Falling back to visible input.")
+        master_pwd = input("Enter master password (visible): ")
+
+    if master_pwd != MASTER_PASSWORD:
+        print("Invalid master password. Exiting program.")
+        exit()
 
 def view():
     with open('passwords.txt', 'r') as f:
@@ -34,6 +49,7 @@ def add():
     with open('passwords.txt', 'a') as f:
         f.write(name + "|" + fer.encrypt(pwd.encode()).decode() + "\n")
 
+authenticate()
 
 while True:
     mode = input(
@@ -48,3 +64,4 @@ while True:
     else:
         print("Invalid mode.")
         continue
+
