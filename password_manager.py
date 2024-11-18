@@ -25,7 +25,7 @@ def authenticate():
     """Authenticate the user with the master password."""
     try:
         # Use getpass to hide input
-        master_pwd = getpass.getpass("Enter master password: ")
+        master_pwd = input("Enter master password: ")
     except Exception as e:
         print("Error with secure input. Falling back to visible input.")
         master_pwd = input("Enter master password (visible): ")
