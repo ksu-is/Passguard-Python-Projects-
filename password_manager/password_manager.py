@@ -54,7 +54,7 @@ authenticate()
 
 while True:
     mode = input(
-        "Would you like to add a new password or view existing ones (view, add), press q to quit? ").lower()
+        "Would you like to add a new account password or view existing ones (view, add), or press q to quit? ").lower()
     if mode == "q":
         break
 
