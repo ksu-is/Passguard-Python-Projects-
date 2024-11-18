@@ -15,6 +15,6 @@ No experience needed—just your determination. Future-proof your career and unl
 
 
 
-KSU-IS Instructions:
+KSU-IS Instructions and information:
 1.) pip install cryptography in terminal to get it to run
-
+2.) current master password is KSUIS
