@@ -18,7 +18,8 @@ def load_key():
 key = load_key()
 fer = Fernet(key)
 
-MASTER_PASSWORD = "ksuis"
+MASTER_PASSWORD = "KSUIS"  
+
 
 def authenticate():
     """Authenticate the user with the master password."""
